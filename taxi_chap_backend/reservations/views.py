@@ -3,6 +3,9 @@ from django.views import View
 from .models import Reservation, Vehicle
 from django.http import JsonResponse
 
+from rest_framework import viewsets, serializers
+
+from .serializers import ReservationSerializer, VehicleSerializer
 # Vue pour lister toutes les réservations
 class ReservationList(View):
     def get(self, request, *args, **kwargs):
@@ -19,3 +22,17 @@ class ReservationCreate(View):
 
 
 # Create your views here.
+
+
+
+
+# # Créez un serializer pour le modèle Reservation
+# class ReservationSerializer(serializers.ModelSerializer):
+#     class Meta:
+#         model = Reservation
+#         fields = ['passenger', 'vehicle', 'start_location', 'end_location', 'status']
+
+# # Créez un viewset pour le modèle Reservation
+# class ReservationViewSet(viewsets.ModelViewSet):
+#     queryset = Reservation.objects.all()
+#     serializer_class = ReservationSerializer
