@@ -1,0 +1,7 @@
+ {
+    "name": "taxis",      
+    "user": "postgres",       
+    "password": "@password@",  
+    "ipAddress": "localhost",             
+    "port": 5432 
+}
